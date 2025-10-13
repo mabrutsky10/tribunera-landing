@@ -1,0 +1,269 @@
+import React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Check, ArrowRight, Package, Users, Trophy, QrCode, HeartHandshake, CupSoda } from "lucide-react";
+import logoImg from "./img/logo-tribunera.jpeg";
+import packA from "./img/tribunera1kg.png";
+import packB from "./img/tribunera1kg2.png";
+import packC from "./img/tribunera10kg.png";
+import packD from "./img/tribunera10kg2.png";
+
+// Tailwind palette reference (from brand exploration)
+// Verde Cancha: #2F6D3A  | Negro Tribuna: #1C1C1C | Dorado Gol: #E2B100
+// Blanco Cal: #F7F7F7   | Rojo Pasión: #D32F2F   | Gris Cemento: #9E9E9E
+
+export default function TribuneraLanding() {
+  const [email, setEmail] = useState("");
+
+  const features = [
+    {
+      icon: <HeartHandshake className="w-6 h-6" />, 
+      title: "Apoya al fútbol amateur",
+      desc: "Cada paquete aporta directamente a clubes y jugadoras/es del barrio.",
+    },
+    {
+      icon: <QrCode className="w-6 h-6" />, 
+      title: "Código único + QR",
+      desc: "Transparencia total: escaneás y ves a quién ayudaste con tu compra.",
+    },
+    {
+      icon: <Users className="w-6 h-6" />, 
+      title: "Red de vendedores",
+      desc: "Modelo de catálogo para que la comunidad también gane comisión.",
+    },
+    {
+      icon: <Package className="w-6 h-6" />, 
+      title: "Packaging responsable",
+      desc: "Diseño auténtico y funcional, listo para góndola y puntos de club.",
+    },
+  ];
+
+  const steps = [
+    {
+      number: "01",
+      title: "Elegí tu Tribunera",
+      desc: "500 g o 1 kg. Ediciones especiales por barrio/club próximamente.",
+    },
+    {
+      number: "02",
+      title: "Escaneá el QR",
+      desc: "Cada paquete tiene un código único: seguí el aporte y conocé su destino.",
+    },
+    {
+      number: "03",
+      title: "Sumate a la Red",
+      desc: "Vendé por catálogo y ganá comisión si sos parte del fútbol amateur.",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "¿Cuánto se aporta por paquete?",
+      a: "Referencia inicial: USD 0,50 por paquete al club/equipo vinculado. Puede variar por edición y canal.",
+    },
+    {
+      q: "¿Cómo funciona la red de vendedores?",
+      a: "Personas del ecosistema amateur (jugadores, DTs, familias) venden con su QR/código y reciben comisión por venta.",
+    },
+    {
+      q: "¿Puedo elegir a qué club apoyar?",
+      a: "Sí. En compras online elegís el club; en puntos físicos el QR del paquete te muestra el destino.",
+    },
+    {
+      q: "¿Cuándo sale a la venta?",
+      a: "Estamos en fase de producción y registro. Sumate para enterarte primero del lanzamiento.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#F7F7F7] text-[#1C1C1C]">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2F6D3A] via-[#2F6D3A] to-[#1C1C1C] opacity-90" />
+        <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-20">
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="text-white">
+              <span className="inline-block text-xs tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full mb-4">Yerba Mate</span>
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+                Tribunera — un mate que comparte tu pasión
+              </h1>
+              <p className="mt-4 text-white/90 text-lg max-w-xl">
+                La yerba que banca al fútbol que jugamos todos. Transparencia por QR, aporte directo a clubes y red de catálogo para que la comunidad también gane.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="#sumate" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[#E2B100] text-[#1C1C1C] font-semibold shadow hover:brightness-95 transition">
+                  Quiero enterarme del lanzamiento <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+                <a href="#como-funciona" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-white/10 text-white font-semibold hover:bg-white/20 transition">
+                  ¿Cómo funciona?
+                </a>
+              </div>
+              <div className="mt-6 flex items-center gap-4 text-white/80 text-sm">
+                <div className="flex items-center gap-2"><Trophy className="w-4 h-4" /> Aporte directo por paquete</div>
+                <div className="flex items-center gap-2"><QrCode className="w-4 h-4" /> Código único</div>
+                <div className="flex items-center gap-2"><Users className="w-4 h-4" /> Red de vendedores</div>
+              </div>
+            </div>
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 text-white shadow-2xl">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-2xl bg-white/20 aspect-[3/4] overflow-hidden">
+                  <img src={packA} alt="Tribunera 1 kg - frente" className="w-full h-full object-cover" />
+                </div>
+                <div className="rounded-2xl bg-white/20 aspect-[3/4] overflow-hidden">
+                  <img src={packB} alt="Tribunera 1 kg - dorso" className="w-full h-full object-cover" />
+                </div>
+                <div className="rounded-2xl bg-white/20 aspect-square overflow-hidden">
+                  <img src={packC} alt="Tribunera 10 kg - frente" className="w-full h-full object-cover" />
+                </div>
+                <div className="rounded-2xl bg-white/20 aspect-square overflow-hidden">
+                  <img src={packD} alt="Tribunera 10 kg - dorso" className="w-full h-full object-cover" />
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-white/80">*Imágenes de muestra. Diseño final en proceso.</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-4 gap-6">
+          {features.map((f, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="bg-white rounded-2xl p-6 shadow-sm border">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#2F6D3A]/10 text-[#2F6D3A]">
+                {f.icon}
+              </div>
+              <h3 className="mt-4 font-semibold text-lg">{f.title}</h3>
+              <p className="text-sm text-neutral-600 mt-1">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Cómo funciona */}
+      <section id="como-funciona" className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map((s, i) => (
+              <div key={i} className="rounded-2xl p-6 border shadow-sm">
+                <div className="text-[#E2B100] font-extrabold text-4xl">{s.number}</div>
+                <h4 className="mt-2 font-semibold text-xl">{s.title}</h4>
+                <p className="mt-1 text-neutral-600">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 p-6 rounded-2xl border bg-[#2F6D3A]/5">
+            <h3 className="font-semibold text-lg">Dos modelos para multiplicar el impacto</h3>
+            <ul className="mt-3 grid md:grid-cols-2 gap-4 text-sm">
+              <li className="flex items-start gap-2"><Check className="mt-0.5 w-4 h-4 text-[#2F6D3A]"/> <span><strong>Solidario directo:</strong> por cada paquete, un aporte transparente al club/equipo.</span></li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 w-4 h-4 text-[#2F6D3A]"/> <span><strong>Red de catálogo:</strong> vendedores de la comunidad ganan comisión por venta.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección catálogo/venta */}
+      <section className="bg-gradient-to-br from-white to-[#F7F7F7]">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h3 className="text-2xl font-extrabold">Venta por catálogo: puente digital–físico</h3>
+              <p className="mt-3 text-neutral-700">Conectamos la comunidad online con la de potrero: QR personales para vendedores, ranking de clubes apoyados y seguimiento en tiempo real.</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li className="flex gap-2 items-start"><Check className="w-4 h-4 text-[#2F6D3A] mt-1"/> Registro de vendedores vinculados al fútbol amateur.</li>
+                <li className="flex gap-2 items-start"><Check className="w-4 h-4 text-[#2F6D3A] mt-1"/> Catálogo online con códigos únicos por producto.</li>
+                <li className="flex gap-2 items-start"><Check className="w-4 h-4 text-[#2F6D3A] mt-1"/> Comisiones claras + tablero de impacto por club.</li>
+              </ul>
+              <div className="mt-6 flex gap-3">
+                <a href="#sumate" className="inline-flex items-center rounded-2xl px-5 py-3 bg-[#2F6D3A] text-white font-semibold shadow hover:brightness-110 transition">Quiero vender Tribunera</a>
+                <a href="#sumate" className="inline-flex items-center rounded-2xl px-5 py-3 border font-semibold hover:bg-white">Quiero apoyar a mi club</a>
+              </div>
+            </div>
+            <div className="rounded-3xl bg-white border p-6 shadow">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="aspect-square rounded-2xl bg-[#2F6D3A]/10 flex items-center justify-center"><CupSoda className="w-8 h-8 text-[#2F6D3A]"/></div>
+                <div className="aspect-square rounded-2xl bg-[#2F6D3A]/10 flex items-center justify-center"><Package className="w-8 h-8 text-[#2F6D3A]"/></div>
+                <div className="aspect-square rounded-2xl bg-[#2F6D3A]/10 flex items-center justify-center"><QrCode className="w-8 h-8 text-[#2F6D3A]"/></div>
+                <div className="aspect-square rounded-2xl bg-[#2F6D3A]/10 flex items-center justify-center font-semibold">500 g</div>
+                <div className="aspect-square rounded-2xl bg-[#2F6D3A]/10 flex items-center justify-center font-semibold">1 kg</div>
+                <div className="aspect-square rounded-2xl bg-[#2F6D3A]/10 flex items-center justify-center font-semibold">Edición Club</div>
+              </div>
+              <p className="text-xs text-neutral-500 mt-3">Vista conceptual del catálogo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Alegorías rotativas */}
+      <section className="bg-[#1C1C1C] text-white">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <h3 className="text-2xl font-extrabold">El fútbol que jugamos todos</h3>
+          <p className="mt-2 text-white/80">Frases que celebran el potrero, la tribuna sin rejas y las superficies mixtas.</p>
+          <div className="mt-6 grid md:grid-cols-3 gap-4">
+            {["La yerba de los cracks de estadios sin alambrados.", "La yerba de los que juegan en barro los sábados y en polvo los domingos.", "La yerba del potrero, donde la pelota pica distinto en cada metro."].map((t,i)=> (
+              <div key={i} className="rounded-2xl p-6 bg-white/5 border border-white/10">{t}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-white">
+        <div className="max-w-4xl mx-auto px-6 py-16">
+          <h3 className="text-2xl font-extrabold text-center mb-12">Preguntas frecuentes</h3>
+          <div className="space-y-6">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border rounded-2xl p-6">
+                <h4 className="font-semibold text-lg mb-2">{faq.q}</h4>
+                <p className="text-neutral-600">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA de suscripción */}
+      <section id="sumate" className="bg-white">
+        <div className="max-w-xl mx-auto px-6 py-16 text-center">
+          <h3 className="text-2xl font-extrabold">Enterate primero</h3>
+          <p className="mt-2 text-neutral-600">Lanzamiento, preventa y convocatoria a vendedores por catálogo.</p>
+          <form onSubmit={(e)=>{e.preventDefault(); window.location.href = `mailto:hola@tribunera.ar?subject=Quiero%20sumarme%20a%20Tribunera&body=Mi%20email%20es%20${encodeURIComponent(email)}%20y%20quiero%20recibir%20novedades.`;}} className="mt-6 flex gap-2 justify-center">
+            <input value={email} onChange={(e)=>setEmail(e.target.value)} required type="email" placeholder="tu@email.com" className="w-full max-w-sm rounded-2xl border px-4 py-3 outline-none focus:ring-2 focus:ring-[#2F6D3A]" />
+            <button type="submit" className="rounded-2xl px-5 py-3 bg-[#E2B100] font-semibold text-[#1C1C1C] hover:brightness-95">Quiero sumarme</button>
+          </form>
+          <p className="text-xs text-neutral-500 mt-3">Al enviar tu email aceptás recibir novedades de Tribunera.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#111] text-white">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logoImg} alt="Logo Tribunera" className="w-10 h-10 rounded-lg object-cover" />
+              <div className="text-xl font-extrabold">TRIBUNERA</div>
+            </div>
+            <p className="text-white/70 text-sm">Yerba mate que comparte tu pasión. Apoya al fútbol amateur con cada paquete.</p>
+          </div>
+          <div>
+            <div className="font-semibold">Proyecto</div>
+            <ul className="mt-2 space-y-2 text-sm text-white/80">
+              <li><a href="#como-funciona" className="hover:underline">Cómo funciona</a></li>
+              <li><a href="#sumate" className="hover:underline">Sumate a la Red</a></li>
+              <li><a href="#" className="hover:underline">Políticas y transparencia</a></li>
+            </ul>
+          </div>
+          <div>
+            <div className="font-semibold">Contacto</div>
+            <ul className="mt-2 space-y-2 text-sm text-white/80">
+              <li><a href="mailto:hola@tribunera.ar" className="hover:underline">hola@tribunera.ar</a></li>
+              <li>Buenos Aires / Córdoba / Miami</li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-white/10 py-4 text-center text-white/60 text-xs">© {new Date().getFullYear()} Tribunera. Todos los derechos reservados.</div>
+      </footer>
+    </div>
+  );
+}
+
