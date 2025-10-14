@@ -8,6 +8,7 @@ import packB from "./img/tribunera1kg2.png";
 import packC from "./img/tribunera10kg.png";
 import packD from "./img/tribunera10kg2.png";
 import SupportImpact from "./components/SupportImpact";
+import TribuneraStorySection from "./components/TribuneraStorySection";
 
 // Tailwind palette reference (from brand exploration)
 // Verde Cancha: #2F6D3A  | Negro Tribuna: #1C1C1C | Dorado Gol: #E2B100
@@ -16,6 +17,17 @@ import SupportImpact from "./components/SupportImpact";
 export default function TribuneraLanding() {
   const [email, setEmail] = useState("");
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [openFaqs, setOpenFaqs] = useState(new Set());
+
+  const toggleFaq = (index) => {
+    const newOpenFaqs = new Set(openFaqs);
+    if (newOpenFaqs.has(index)) {
+      newOpenFaqs.delete(index);
+    } else {
+      newOpenFaqs.add(index);
+    }
+    setOpenFaqs(newOpenFaqs);
+  };
 
   const features = [
     {
@@ -47,20 +59,36 @@ export default function TribuneraLanding() {
 
   const faqs = [
     {
-      q: "¿Cuánto se aporta por paquete?",
-      a: "Referencia inicial: USD 0,50 por paquete al club/equipo vinculado. Puede variar por edición y canal.",
+      q: "¿Cómo funciona el modelo de impacto de Yerba Tribunera?",
+      a: "Por cada paquete vendido se genera un aporte destinado al fútbol amateur. Los clubes y equipos registrados en +10 pueden recibir apoyo directo o participar como distribuidores, generando ingresos sostenibles para su comunidad.",
     },
     {
-      q: "¿Cómo funciona la red de vendedores?",
-      a: "Personas del ecosistema amateur (jugadores, DTs, familias) venden con su QR/código y reciben comisión por venta.",
+      q: "¿Qué significa ser parte de la red de Socios Coquita?",
+      a: "Socios Coquita es el programa que conecta marcas, equipos y consumidores solidarios. Cada compra, suscripción o acción genera puntos y beneficios que vuelven al ecosistema: becas, indumentaria y cobertura mediática a través de Gol Popular.",
     },
     {
-      q: "¿Puedo elegir a qué club apoyar?",
-      a: "Sí. En compras online elegís el club; en puntos físicos el QR del paquete te muestra el destino.",
+      q: "¿Puedo elegir a qué club apoyar con mi compra?",
+      a: "Sí. Cuando comprás online podés seleccionar el club o equipo que querés ayudar. Si comprás en puntos físicos, escaneá el QR del paquete y conocé a qué comunidad estás aportando.",
     },
     {
-      q: "¿Cuándo sale a la venta?",
-      a: "Estamos en fase de producción y registro. Sumate para enterarte primero del lanzamiento.",
+      q: "¿Quiénes pueden revender o distribuir la yerba?",
+      a: "Solo equipos o personas vinculadas al fútbol amateur dentro de +10. Una vez registrados y validados, acceden al catálogo y comisionan por cada venta, convirtiéndose en distribuidores oficiales.",
+    },
+    {
+      q: "¿Qué diferencia a Yerba Tribunera de otras marcas?",
+      a: "No es solo una yerba: es un movimiento que celebra al potrero y financia el fútbol que jugamos todos. Combina calidad premium, origen responsable y un modelo de distribución con impacto real en los clubes.",
+    },
+    {
+      q: "¿Cuándo estará disponible la suscripción mensual?",
+      a: "Estamos preparando los primeros planes de suscripción: desde 5 paquetes por mes hasta opciones para equipos y organizaciones. Los suscriptores recibirán beneficios exclusivos y participación directa en el programa de impacto.",
+    },
+    {
+      q: "¿Qué relación tiene con +10 y Gol Popular?",
+      a: "Yerba Tribunera forma parte del ecosistema +10: el producto impulsa la economía del fútbol amateur, mientras que Gol Popular cuenta las historias de quienes lo hacen posible —jugadores, clubes y barrios— amplificando el impacto de cada aporte.",
+    },
+    {
+      q: "¿Cómo puedo invertir o colaborar con el proyecto?",
+      a: "Podés sumarte como inversor o partner del programa Tribunera Impact. Cada aporte ayuda a escalar la red, mejorar la trazabilidad y expandir el modelo solidario a más regiones. Contacto en /contacto?topic=inversion.",
     },
   ];
 
@@ -182,28 +210,46 @@ export default function TribuneraLanding() {
         </div>
       </section>
 
-      {/* Alegorías rotativas */}
-      <section className="bg-[#1C1C1C] text-white">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <h3 className="text-2xl font-extrabold">El fútbol que jugamos todos</h3>
-          <p className="mt-2 text-white/80">Frases que celebran el potrero, la tribuna sin rejas y las superficies mixtas.</p>
-          <div className="mt-6 grid md:grid-cols-3 gap-4">
-            {["La yerba de los cracks de estadios sin alambrados.", "La yerba de los que juegan en barro los sábados y en polvo los domingos.", "La yerba del potrero, donde la pelota pica distinto en cada metro."].map((t,i)=> (
-              <div key={i} className="rounded-2xl p-6 bg-white/5 border border-white/10">{t}</div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Tribunera Story Section */}
+      <TribuneraStorySection />
 
       {/* FAQ Section */}
       <section className="bg-white">
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h3 className="text-2xl font-extrabold text-center mb-12">Preguntas frecuentes</h3>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="border rounded-2xl p-6">
-                <h4 className="font-semibold text-lg mb-2">{faq.q}</h4>
-                <p className="text-neutral-600">{faq.a}</p>
+              <div key={i} className="border rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => toggleFaq(i)}
+                  className="w-full text-left p-6 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2F6D3A] focus:ring-inset"
+                >
+                  <div className="flex justify-between items-center">
+                    <h4 className="font-semibold text-lg pr-4">{faq.q}</h4>
+                    <div className="flex-shrink-0">
+                      <motion.div
+                        animate={{ rotate: openFaqs.has(i) ? 45 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="w-6 h-6 flex items-center justify-center"
+                      >
+                        <span className="text-2xl font-light">+</span>
+                      </motion.div>
+                    </div>
+                  </div>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    height: openFaqs.has(i) ? "auto" : 0,
+                    opacity: openFaqs.has(i) ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 pb-6">
+                    <p className="text-neutral-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                </motion.div>
               </div>
             ))}
           </div>

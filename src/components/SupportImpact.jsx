@@ -4,8 +4,8 @@ import { Check, Info, ArrowRight } from "lucide-react";
 
 export default function SupportImpact() {
   const plans = [
-    { name: "Plan 5", packages: "5 paquetes / mes", id: "5" },
-    { name: "Plan 20", packages: "20 paquetes / mes", id: "20" },
+    { name: "Plan 5", packages: "5 kg / mes", id: "5" },
+    { name: "Plan 20", packages: "20 kg / mes", id: "20" },
     { name: "Más volumen", packages: "¿Necesitás otro número?", id: "custom" }
   ];
 
@@ -22,17 +22,6 @@ export default function SupportImpact() {
     }
   };
 
-  const handleResellerClick = (action) => {
-    if (typeof window !== 'undefined' && window.track) {
-      window.track('reseller_apply_click');
-    }
-    
-    if (action === 'register') {
-      window.open('https://mas10.app/alta-equipo', '_blank');
-    } else {
-      window.location.href = '/distribuidores/solicitud';
-    }
-  };
 
   const handleInvestorClick = () => {
     if (typeof window !== 'undefined' && window.track) {
@@ -75,11 +64,11 @@ export default function SupportImpact() {
               <ul className="space-y-2 text-sm text-neutral-600 mb-6">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-[#2F6D3A] mt-0.5 flex-shrink-0" />
-                  <span>Modelo de suscripción: elegís tu plan y te enviamos tu Yerba cada mes.</span>
+                  <span>Modelo de suscripción: elegís tu plan y acorda entrega con tu distribuidor la Yerba cada mes.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-[#2F6D3A] mt-0.5 flex-shrink-0" />
-                  <span>Impacto transparente: cada paquete contribuye a clubes y equipos de tu comunidad.</span>
+                  <span>Impacto transparente: cada paquete contribuye a equipos amateurs de tu comunidad.</span>
                 </li>
               </ul>
             </div>
@@ -106,10 +95,10 @@ export default function SupportImpact() {
             </div>
 
             <button
-              onClick={() => window.location.href = '/suscripcion'}
-              className="w-full bg-[#E2B100] text-[#1C1C1C] font-semibold py-3 px-4 rounded-xl hover:bg-[#E2B100]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#E2B100] focus:ring-offset-2"
+              disabled
+              className="w-full bg-gray-300 text-gray-500 font-semibold py-3 px-4 rounded-xl cursor-not-allowed"
             >
-              Ver planes
+              Ver puntos de entrega
             </button>
           </motion.div>
 
@@ -119,20 +108,14 @@ export default function SupportImpact() {
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }} 
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-2xl border shadow-sm p-6 hover:shadow-md transition-shadow relative"
+            className="bg-white rounded-2xl border shadow-sm p-6 hover:shadow-md transition-shadow"
           >
-            <div className="absolute top-4 right-4">
-              <span className="bg-[#2F6D3A] text-white text-xs font-medium px-2 py-1 rounded-full">
-                Solo equipos +10
-              </span>
-            </div>
-
             <div className="mb-6">
               <h3 className="text-xl md:text-2xl font-semibold text-[#1C1C1C] mb-3">
-                Revender / Red de catálogo
+                Red de catálogo (equipos)
               </h3>
               <p className="text-sm md:text-base text-neutral-600 mb-4">
-                Ganá comisión por paquete vendiendo Yerba Tribunera en tu comunidad.
+                Equipos no profesionales ganan comisión por entrega de paquetes de Yerba Tribunera en su comunidad.
               </p>
               
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6">
@@ -146,18 +129,14 @@ export default function SupportImpact() {
             </div>
 
             <div className="space-y-3">
-              <button
-                onClick={() => handleResellerClick('register')}
-                className="w-full bg-[#2F6D3A] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#2F6D3A]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2F6D3A] focus:ring-offset-2"
+              <a
+                href="https://mas10.ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#2F6D3A] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#2F6D3A]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2F6D3A] focus:ring-offset-2 flex items-center justify-center"
               >
                 Dar de alta mi equipo en +10
-              </button>
-              <button
-                onClick={() => handleResellerClick('distributor')}
-                className="w-full border border-[#2F6D3A] text-[#2F6D3A] font-semibold py-3 px-4 rounded-xl hover:bg-[#2F6D3A]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2F6D3A] focus:ring-offset-2"
-              >
-                Ser distribuidor oficial
-              </button>
+              </a>
             </div>
           </motion.div>
 
