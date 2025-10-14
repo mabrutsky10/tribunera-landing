@@ -1,12 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Package, Users, Trophy, QrCode, HeartHandshake, CupSoda } from "lucide-react";
-import logoImg from "./img/logo-tribunera.jpeg";
+import logoImg from "./img/logotribunera-slogan.jpeg";
 import packA from "./img/tribunera1kg.png";
 import packB from "./img/tribunera1kg2.png";
 import packC from "./img/tribunera10kg.png";
 import packD from "./img/tribunera10kg2.png";
+import SupportImpact from "./components/SupportImpact";
 
 // Tailwind palette reference (from brand exploration)
 // Verde Cancha: #2F6D3A  | Negro Tribuna: #1C1C1C | Dorado Gol: #E2B100
@@ -14,47 +15,35 @@ import packD from "./img/tribunera10kg2.png";
 
 export default function TribuneraLanding() {
   const [email, setEmail] = useState("");
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
   const features = [
     {
-      icon: <HeartHandshake className="w-6 h-6" />, 
-      title: "Apoya al fútbol amateur",
-      desc: "Cada paquete aporta directamente a clubes y jugadoras/es del barrio.",
-    },
-    {
-      icon: <QrCode className="w-6 h-6" />, 
-      title: "Código único + QR",
-      desc: "Transparencia total: escaneás y ves a quién ayudaste con tu compra.",
-    },
-    {
-      icon: <Users className="w-6 h-6" />, 
-      title: "Red de vendedores",
-      desc: "Modelo de catálogo para que la comunidad también gane comisión.",
-    },
-    {
-      icon: <Package className="w-6 h-6" />, 
-      title: "Packaging responsable",
-      desc: "Diseño auténtico y funcional, listo para góndola y puntos de club.",
+      icon: <HeartHandshake className="w-8 h-8" />, 
+      title: "Apoya al fútbol no profesional",
+      desc: "Yerba oficial del fútbol amateur, aportando a que cada equipo sea más visible, conectado y fondeable",
     },
   ];
 
-  const steps = [
-    {
-      number: "01",
-      title: "Elegí tu Tribunera",
-      desc: "500 g o 1 kg. Ediciones especiales por barrio/club próximamente.",
-    },
-    {
-      number: "02",
-      title: "Escaneá el QR",
-      desc: "Cada paquete tiene un código único: seguí el aporte y conocé su destino.",
-    },
-    {
-      number: "03",
-      title: "Sumate a la Red",
-      desc: "Vendé por catálogo y ganá comisión si sos parte del fútbol amateur.",
-    },
+  const carouselPhrases = [
+    "que apoya el fútbol que vos jugás",
+    "de los cracks que gambetean rivales, piedras y champas en la misma jugada",
+    "de los cracks de estadios sin alambrados.",
+    "de los que la llevan aunque la pelota pique distinto en cada metro.",
+    "de los jugadores que se orientan con líneas de cal gastada.",
+    "de los jugadores que cuentan los 12 pasos para el penal",
+    "que comparte tus momentos."
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhraseIndex((prevIndex) => 
+        (prevIndex + 1) % carouselPhrases.length
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [carouselPhrases.length]);
+
 
   const faqs = [
     {
@@ -85,23 +74,22 @@ export default function TribuneraLanding() {
             <div className="text-white">
               <span className="inline-block text-xs tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full mb-4">Yerba Mate</span>
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                Tribunera — un mate que comparte tu pasión
+                Tribunera<br />
+                La yerba que comparte tu pasión
               </h1>
               <p className="mt-4 text-white/90 text-lg max-w-xl">
-                La yerba que banca al fútbol que jugamos todos. Transparencia por QR, aporte directo a clubes y red de catálogo para que la comunidad también gane.
+                Yerbas que apoyan a selecciones hay de a montones. Que apoye al fútbol que jugamos todos, sólo una… Yerba Mate Tribunera
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a href="#sumate" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[#E2B100] text-[#1C1C1C] font-semibold shadow hover:brightness-95 transition">
                   Quiero enterarme del lanzamiento <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
-                <a href="#como-funciona" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-white/10 text-white font-semibold hover:bg-white/20 transition">
+                <a href="#support-impact" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-white/10 text-white font-semibold hover:bg-white/20 transition">
                   ¿Cómo funciona?
                 </a>
               </div>
               <div className="mt-6 flex items-center gap-4 text-white/80 text-sm">
-                <div className="flex items-center gap-2"><Trophy className="w-4 h-4" /> Aporte directo por paquete</div>
-                <div className="flex items-center gap-2"><QrCode className="w-4 h-4" /> Código único</div>
-                <div className="flex items-center gap-2"><Users className="w-4 h-4" /> Red de vendedores</div>
+                <div className="flex items-center gap-2"><Trophy className="w-4 h-4" /> Blend uruguayo premium. Sin palo. Con mucho aguante... como vos!</div>
               </div>
             </div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 text-white shadow-2xl">
@@ -127,40 +115,40 @@ export default function TribuneraLanding() {
 
       {/* Features */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-6">
-          {features.map((f, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="bg-white rounded-2xl p-6 shadow-sm border">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#2F6D3A]/10 text-[#2F6D3A]">
-                {f.icon}
-              </div>
-              <h3 className="mt-4 font-semibold text-lg">{f.title}</h3>
-              <p className="text-sm text-neutral-600 mt-1">{f.desc}</p>
-            </motion.div>
-          ))}
+        <div className="flex justify-center">
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="bg-white rounded-3xl p-8 shadow-lg border max-w-2xl text-center">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-[#2F6D3A]/10 text-[#2F6D3A] mx-auto">
+              {features[0].icon}
+            </div>
+            <h3 className="mt-6 font-bold text-2xl text-[#2F6D3A]">{features[0].title}</h3>
+            <p className="text-lg text-neutral-700 mt-3 leading-relaxed">
+              Yerba oficial del fútbol amateur, aportando a que cada equipo tenga su presencia y historia digital siendo más <strong className="text-[#2F6D3A] font-bold">visible</strong>, se <strong className="text-[#2F6D3A] font-bold">conecte</strong> con otros equipos, jugadores y seguidores, y así tener sus propios <strong className="text-[#2F6D3A] font-bold">ingresos</strong> por socios y sponsors (como Tribunera).
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Cómo funciona */}
-      <section id="como-funciona" className="bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((s, i) => (
-              <div key={i} className="rounded-2xl p-6 border shadow-sm">
-                <div className="text-[#E2B100] font-extrabold text-4xl">{s.number}</div>
-                <h4 className="mt-2 font-semibold text-xl">{s.title}</h4>
-                <p className="mt-1 text-neutral-600">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 p-6 rounded-2xl border bg-[#2F6D3A]/5">
-            <h3 className="font-semibold text-lg">Dos modelos para multiplicar el impacto</h3>
-            <ul className="mt-3 grid md:grid-cols-2 gap-4 text-sm">
-              <li className="flex items-start gap-2"><Check className="mt-0.5 w-4 h-4 text-[#2F6D3A]"/> <span><strong>Solidario directo:</strong> por cada paquete, un aporte transparente al club/equipo.</span></li>
-              <li className="flex items-start gap-2"><Check className="mt-0.5 w-4 h-4 text-[#2F6D3A]"/> <span><strong>Red de catálogo:</strong> vendedores de la comunidad ganan comisión por venta.</span></li>
-            </ul>
+      {/* Carousel Section */}
+      <section className="bg-[#2F6D3A] text-white py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="text-4xl md:text-5xl font-extrabold leading-tight">
+            <span className="text-white">La yerba</span>
+            <motion.span
+              key={currentPhraseIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="block text-[#E2B100] mt-2"
+            >
+              {carouselPhrases[currentPhraseIndex]}
+            </motion.span>
           </div>
         </div>
       </section>
+
+      {/* Support Impact */}
+      <SupportImpact />
 
       {/* Sección catálogo/venta */}
       <section className="bg-gradient-to-br from-white to-[#F7F7F7]">
@@ -248,7 +236,7 @@ export default function TribuneraLanding() {
           <div>
             <div className="font-semibold">Proyecto</div>
             <ul className="mt-2 space-y-2 text-sm text-white/80">
-              <li><a href="#como-funciona" className="hover:underline">Cómo funciona</a></li>
+              <li><a href="#support-impact" className="hover:underline">Cómo funciona</a></li>
               <li><a href="#sumate" className="hover:underline">Sumate a la Red</a></li>
               <li><a href="#" className="hover:underline">Políticas y transparencia</a></li>
             </ul>
