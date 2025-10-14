@@ -59,11 +59,10 @@ export default function TribuneraStorySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            onClick={() => window.location.href = '/proceso'}
-            className="inline-flex items-center gap-2 bg-[#E2B100] text-[#1C1C1C] font-semibold px-6 py-3 rounded-xl hover:bg-[#E2B100]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#E2B100] focus:ring-offset-2 focus:ring-offset-[#1C1C1C]"
+            disabled
+            className="inline-flex items-center gap-2 bg-gray-300 text-gray-500 font-semibold px-6 py-3 rounded-xl cursor-not-allowed"
           >
-            Quiero conocer la historia completa
-            <ArrowRight className="w-4 h-4" />
+            Proximamente la historia completa
           </motion.button>
         </div>
       </div>

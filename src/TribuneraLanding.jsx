@@ -179,7 +179,7 @@ export default function TribuneraLanding() {
       <SupportImpact />
 
       {/* Sección catálogo/venta */}
-      <section className="bg-gradient-to-br from-white to-[#F7F7F7]">
+      <section className="bg-gradient-to-br from-white to-[#F7F7F7] hidden">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
