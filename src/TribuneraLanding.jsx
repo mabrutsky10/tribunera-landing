@@ -52,7 +52,7 @@ export default function TribuneraLanding() {
       setCurrentPhraseIndex((prevIndex) => 
         (prevIndex + 1) % carouselPhrases.length
       );
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [carouselPhrases.length]);
 
@@ -159,9 +159,9 @@ export default function TribuneraLanding() {
       {/* Carousel Section */}
       <section className="bg-[#2F6D3A] text-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="text-4xl md:text-5xl font-extrabold leading-tight min-h-[200px] md:min-h-[240px] flex flex-col justify-center">
+          <div className="text-4xl md:text-5xl font-extrabold leading-tight min-h-[220px] md:min-h-[240px] flex flex-col justify-center">
             <span className="text-white">La yerba</span>
-            <div className="relative min-h-[80px] md:min-h-[100px] flex items-center justify-center">
+            <div className="relative min-h-[100px] md:min-h-[100px] flex items-center justify-center">
               <motion.span
                 key={currentPhraseIndex}
                 initial={{ opacity: 0, y: 20 }}
