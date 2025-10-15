@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Package, Users, Trophy, QrCode, HeartHandshake, CupSoda } from "lucide-react";
+import { Check, ArrowRight, Package, Users, Trophy, QrCode, HeartHandshake, CupSoda, Mail, MapPin, Phone } from "lucide-react";
 import logoImg from "./img/logotribunera-slogan.jpeg";
 import packA from "./img/tribunera1kg.png";
 import packB from "./img/tribunera1kg2.png";
@@ -259,7 +259,7 @@ export default function TribuneraLanding() {
       </section>
 
       {/* CTA de suscripción */}
-      <section id="sumate" className="bg-white">
+      <section id="sumate" className="bg-white hidden">
         <div className="max-w-xl mx-auto px-6 py-16 text-center">
           <h3 className="text-2xl font-extrabold">Enterate primero</h3>
           <p className="mt-2 text-neutral-600">Lanzamiento, preventa y convocatoria a vendedores por catálogo.</p>
@@ -290,11 +290,21 @@ export default function TribuneraLanding() {
             </ul>
           </div>
           <div>
-            <div className="font-semibold">Contacto</div>
-            <ul className="mt-2 space-y-2 text-sm text-white/80">
-              <li><a href="mailto:hola@tribunera.ar" className="hover:underline">hola@tribunera.ar</a></li>
-              <li>Buenos Aires / Córdoba / Miami</li>
-            </ul>
+            <div className="font-semibold text-lg mb-4">Contacto</div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-[#E2B100]" />
+                <a href="mailto:hola@mas10.ar" className="text-white hover:text-[#E2B100] transition-colors">hola@mas10.ar</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-[#E2B100]" />
+                <span className="text-white">Argentina</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#E2B100]" />
+                <a href="tel:+5493512392367" className="text-white hover:text-[#E2B100] transition-colors">+54 9351 239 2367</a>
+              </div>
+            </div>
           </div>
         </div>
         <div className="border-t border-white/10 py-4 text-center text-white/60 text-xs">© {new Date().getFullYear()} Tribunera. Todos los derechos reservados.</div>
