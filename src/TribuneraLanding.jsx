@@ -60,15 +60,15 @@ export default function TribuneraLanding() {
   const faqs = [
     {
       q: "¿Cómo funciona el modelo de impacto de Yerba Tribunera?",
-      a: "Por cada paquete vendido se genera un aporte destinado al fútbol amateur. Los clubes y equipos registrados en +10 pueden recibir apoyo directo o participar como distribuidores, generando ingresos sostenibles para su comunidad.",
+      a: "Por cada paquete vendido se genera un aporte destinado al fútbol amateur. Los equipos registrados en +10 pueden recibir apoyo directo o participar como distribuidores, generando ingresos sostenibles para su comunidad.",
     },
     {
       q: "¿Qué significa ser parte de la red de Socios Coquita?",
-      a: "Socios Coquita es el programa que conecta marcas, equipos y consumidores solidarios. Cada compra, suscripción o acción genera puntos y beneficios que vuelven al ecosistema: becas, indumentaria y cobertura mediática a través de Gol Popular.",
+      a: "Socios Coquita es el programa de la comunidad +10 para que cada equipo de futbol no profesional, pueda tener sus socios (como los clubes profesionales) al precio promedio de una coca al mes. Los socios \"coquita\" tienen descuentos y beneficios por parte de sponsors, como lo es Yerba Tribunera.",
     },
     {
       q: "¿Puedo elegir a qué club apoyar con mi compra?",
-      a: "Sí. Cuando comprás online podés seleccionar el club o equipo que querés ayudar. Si comprás en puntos físicos, escaneá el QR del paquete y conocé a qué comunidad estás aportando.",
+      a: "Sí. Cuando te suscribís, podés seleccionar al equipo que querés ayudar. Si no elegís ninguno, se va a distribuir a una de las causas solidarias relacionadas a fútbol.",
     },
     {
       q: "¿Quiénes pueden revender o distribuir la yerba?",
@@ -80,7 +80,7 @@ export default function TribuneraLanding() {
     },
     {
       q: "¿Cuándo estará disponible la suscripción mensual?",
-      a: "Estamos preparando los primeros planes de suscripción: desde 5 paquetes por mes hasta opciones para equipos y organizaciones. Los suscriptores recibirán beneficios exclusivos y participación directa en el programa de impacto.",
+      a: "Estamos preparando los primeros planes de suscripción: desde 5 kilogramos por mes hasta opciones para equipos y organizaciones. Los suscriptores recibirán beneficios exclusivos y participación directa en el programa de impacto.",
     },
     {
       q: "¿Qué relación tiene con +10 y Gol Popular?",
@@ -88,7 +88,7 @@ export default function TribuneraLanding() {
     },
     {
       q: "¿Cómo puedo invertir o colaborar con el proyecto?",
-      a: "Podés sumarte como inversor o partner del programa Tribunera Impact. Cada aporte ayuda a escalar la red, mejorar la trazabilidad y expandir el modelo solidario a más regiones. Contacto en /contacto?topic=inversion.",
+      a: "Podés sumarte como inversor o partner del programa Tribunera Impact. Cada aporte ayuda a escalar la red, mejorar la trazabilidad y expandir el modelo solidario a más regiones.",
     },
   ];
 
