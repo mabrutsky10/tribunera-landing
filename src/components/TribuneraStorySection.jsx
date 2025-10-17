@@ -6,15 +6,15 @@ export default function TribuneraStorySection() {
   const storyCards = [
     {
       title: "El Blend de la Tribuna",
-      content: "Nuestro equipo de especialistas selecciona las mejores hierbas uruguayas, combinadas con cosechas nobles de Misiones. Un sabor que rinde homenaje al fútbol amateur: auténtico, intenso y colectivo."
+      content: "Nuestro equipo de especialistas selecciona las mejores yerbas uruguayas, combinadas con cosechas nobles de Misiones. Un sabor que rinde homenaje al fútbol amateur: auténtico, intenso y colectivo."
     },
     {
-      title: "De la Hacienda al Club",
-      content: "Cada paquete representa una red de trabajo local, donde productores, tostadores y clubes comparten una misma misión: que el fútbol que jugamos todos también genere valor para todos."
+      title: "De la Hacienda al Equipo",
+      content: "Cada paquete representa una red de trabajo local, donde productores, tostadores y equipos comparten una misma misión: que el fútbol que jugamos todos también genere valor para todos."
     },
     {
       title: "El Espíritu Tribunero",
-      content: "Más que una yerba, es una causa. Una manera de unir a la gente que alienta, juega y aporta. Pronto conocerás cada paso del proceso y las personas que lo hacen posible."
+      content: "Más que una yerba, es una causa. Una manera de unir a la gente que alienta, juega y aporta. Pronto conocerás cada paso del proceso y a las personas que lo hacen posible."
     }
   ];
 
@@ -46,7 +46,21 @@ export default function TribuneraStorySection() {
                 {card.title}
               </h3>
               <p className="text-white/80 leading-relaxed">
-                {card.content}
+                {card.title === "El Blend de la Tribuna" && (
+                  <>
+                    Nuestro equipo de especialistas selecciona las mejores yerbas uruguayas, combinadas con cosechas nobles de Misiones. Un sabor que rinde homenaje al fútbol amateur: <strong className="text-[#E2B100] font-bold">auténtico, intenso y colectivo</strong>.
+                  </>
+                )}
+                {card.title === "De la Hacienda al Equipo" && (
+                  <>
+                    Cada paquete representa una red de trabajo local, donde productores, tostadores y equipos comparten una misma <strong className="text-[#E2B100] font-bold">misión: que el fútbol que jugamos todos también genere valor para todos</strong>.
+                  </>
+                )}
+                {card.title === "El Espíritu Tribunero" && (
+                  <>
+                    Más que una yerba, es <strong className="text-[#E2B100] font-bold">una causa</strong>. Una manera de <strong className="text-[#E2B100] font-bold">unir a la gente que alienta, juega y aporta</strong>. Pronto conocerás cada paso del proceso y a las personas que lo hacen posible.
+                  </>
+                )}
               </p>
             </motion.div>
           ))}
@@ -62,7 +76,7 @@ export default function TribuneraStorySection() {
             disabled
             className="inline-flex items-center gap-2 bg-gray-300 text-gray-500 font-semibold px-6 py-3 rounded-xl cursor-not-allowed"
           >
-            Proximamente la historia completa
+            Próximamente la historia completa
           </motion.button>
         </div>
       </div>
