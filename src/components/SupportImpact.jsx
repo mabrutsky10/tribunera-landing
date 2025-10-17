@@ -64,7 +64,7 @@ export default function SupportImpact() {
               <ul className="space-y-2 text-sm text-neutral-600 mb-6">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-[#2F6D3A] mt-0.5 flex-shrink-0" />
-                  <span>Modelo de suscripción: elegí tu plan y acordá la entrega con tu distribuidor Tribunera cada mes.</span>
+                  <span>Modelo de suscripción: elegí tu plan y acordá la entrega con tu <strong className="text-[#2F6D3A] font-bold">distribuidor Tribunera</strong> cada mes.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-[#2F6D3A] mt-0.5 flex-shrink-0" />
@@ -122,7 +122,7 @@ export default function SupportImpact() {
                 <div className="flex items-start gap-2">
                   <Info className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-blue-800">
-                    <strong>Elegibilidad:</strong> Disponible solo para equipos de fútbol no profesional que estén dados de alta en +10. Al aprobarse, quedan habilitados como distribuidores oficiales y comisionan por cada paquete.
+                    <strong>Elegibilidad:</strong> Disponible solo para equipos de fútbol no profesional que estén dados de alta en <strong className="text-[#2F6D3A] font-bold">+10</strong>. Al aprobarse, quedan habilitados como <strong className="text-[#2F6D3A] font-bold">distribuidores oficiales</strong> y comisionan por cada paquete.
                   </div>
                 </div>
               </div>

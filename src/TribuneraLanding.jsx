@@ -63,12 +63,12 @@ export default function TribuneraLanding() {
       a: "Por cada paquete vendido se genera un aporte destinado al fútbol amateur. Los equipos registrados en +10 pueden recibir apoyo directo o participar como distribuidores, generando ingresos sostenibles para su comunidad.",
     },
     {
-      q: "¿Qué significa ser parte de la red de Socios Coquita?",
-      a: "Socios Coquita es el programa de la comunidad +10 para que cada equipo de futbol no profesional, pueda tener sus socios (como los clubes profesionales) al precio promedio de una coca al mes. Los socios \"coquita\" tienen descuentos y beneficios por parte de sponsors, como lo es Yerba Tribunera.",
+      q: "¿Qué significa ser parte de la red de \"Socios Coquita\"?",
+      a: "\"Socios Coquita\" es el programa de la comunidad +10 para que cada equipo de fútbol no profesional pueda tener sus socios (como los equipos profesionales) al precio promedio de una coca al mes. Los \"socios coquita\" tienen descuentos y beneficios por parte de sponsors, como lo es Yerba Tribunera.",
     },
     {
-      q: "¿Puedo elegir a qué club apoyar con mi compra?",
-      a: "Sí. Cuando te suscribís, podés seleccionar al equipo que querés ayudar. Si no elegís ninguno, se va a distribuir a una de las causas solidarias relacionadas a fútbol.",
+      q: "¿Puedo elegir a qué equipo apoyar con mi compra?",
+      a: "Sí. Cuando te suscribís, podés seleccionar el equipo al que querés ayudar. Si no elegís ninguno, se va a distribuir a una de las causas solidarias relacionadas al fútbol.",
     },
     {
       q: "¿Quiénes pueden revender o distribuir la yerba?",
@@ -76,7 +76,7 @@ export default function TribuneraLanding() {
     },
     {
       q: "¿Qué diferencia a Yerba Tribunera de otras marcas?",
-      a: "No es solo una yerba: es un movimiento que celebra al potrero y financia el fútbol que jugamos todos. Combina calidad premium, origen responsable y un modelo de distribución con impacto real en los clubes.",
+      a: "No es solo una yerba: es un movimiento que celebra al potrero y financia el fútbol que jugamos todos. Combina calidad premium, origen responsable y un modelo de distribución con impacto real en los equipos.",
     },
     {
       q: "¿Cuándo estará disponible la suscripción mensual?",
@@ -84,7 +84,7 @@ export default function TribuneraLanding() {
     },
     {
       q: "¿Qué relación tiene con +10 y Gol Popular?",
-      a: "Yerba Tribunera forma parte del ecosistema +10: el producto impulsa la economía del fútbol amateur, mientras que Gol Popular cuenta las historias de quienes lo hacen posible —jugadores, clubes y barrios— amplificando el impacto de cada aporte.",
+      a: "Yerba Tribunera forma parte del ecosistema +10: el producto impulsa la economía del fútbol amateur, mientras que Gol Popular cuenta las historias de quienes lo hacen posible —jugadores, equipos y barrios— amplificando el impacto de cada aporte.",
     },
     {
       q: "¿Cómo puedo invertir o colaborar con el proyecto?",
@@ -249,7 +249,32 @@ export default function TribuneraLanding() {
                   className="overflow-hidden"
                 >
                   <div className="px-6 pb-6">
-                    <p className="text-neutral-600 leading-relaxed">{faq.a}</p>
+                    <p className="text-neutral-600 leading-relaxed">
+                      {faq.q === "¿Cómo funciona el modelo de impacto de Yerba Tribunera?" && (
+                        <>Por cada paquete vendido se genera un aporte destinado al fútbol amateur. Los equipos registrados en <strong className="font-bold">+10</strong> pueden recibir apoyo directo o participar como distribuidores, generando ingresos sostenibles para su comunidad.</>
+                      )}
+                      {faq.q === "¿Qué significa ser parte de la red de \"Socios Coquita\"?" && (
+                        <><strong className="font-bold">"Socios Coquita"</strong> es el programa de la comunidad <strong className="font-bold">+10</strong> para que cada equipo de fútbol no profesional pueda tener sus socios (como los equipos profesionales) al precio promedio de una coca al mes. Los <strong className="font-bold">"socios coquita"</strong> tienen descuentos y beneficios por parte de sponsors, como lo es <strong className="font-bold">Yerba Tribunera</strong>.</>
+                      )}
+                      {faq.q === "¿Puedo elegir a qué equipo apoyar con mi compra?" && (
+                        <>Sí. Cuando te suscribís, podés seleccionar el equipo al que querés ayudar. Si no elegís ninguno, se va a distribuir a una de las causas solidarias relacionadas al fútbol.</>
+                      )}
+                      {faq.q === "¿Quiénes pueden revender o distribuir la yerba?" && (
+                        <>Solo equipos o personas vinculadas al fútbol amateur dentro de <strong className="font-bold">+10</strong>. Una vez registrados y validados, acceden al catálogo y comisionan por cada venta, convirtiéndose en distribuidores oficiales.</>
+                      )}
+                      {faq.q === "¿Qué diferencia a Yerba Tribunera de otras marcas?" && (
+                        <>No es solo una yerba: es un movimiento que celebra al potrero y financia el fútbol que jugamos todos. Combina calidad premium, origen responsable y un modelo de distribución con impacto real en los equipos.</>
+                      )}
+                      {faq.q === "¿Cuándo estará disponible la suscripción mensual?" && (
+                        <>Estamos preparando los primeros planes de suscripción: desde 5 kilogramos por mes hasta opciones para equipos y organizaciones. Los suscriptores recibirán beneficios exclusivos y participación directa en el programa de impacto.</>
+                      )}
+                      {faq.q === "¿Qué relación tiene con +10 y Gol Popular?" && (
+                        <><strong className="font-bold">Yerba Tribunera</strong> forma parte del ecosistema <strong className="font-bold">+10</strong>: el producto impulsa la economía del fútbol amateur, mientras que Gol Popular cuenta las historias de quienes lo hacen posible —jugadores, equipos y barrios— amplificando el impacto de cada aporte.</>
+                      )}
+                      {faq.q === "¿Cómo puedo invertir o colaborar con el proyecto?" && (
+                        <>Podés sumarte como inversor o partner del programa <strong className="font-bold">Tribunera Impact</strong>. Cada aporte ayuda a escalar la red, mejorar la trazabilidad y expandir el modelo solidario a más regiones.</>
+                      )}
+                    </p>
                   </div>
                 </motion.div>
               </div>
@@ -279,7 +304,7 @@ export default function TribuneraLanding() {
               <img src={logoImg} alt="Logo Tribunera" className="w-10 h-10 rounded-lg object-cover" />
               <div className="text-xl font-extrabold">TRIBUNERA</div>
             </div>
-            <p className="text-white/70 text-sm">Yerba mate que comparte tu pasión. Apoya al fútbol amateur con cada paquete.</p>
+            <p className="text-white/70 text-sm">La yerba mate que comparte tu pasión y apoya al fútbol amateur con cada paquete.</p>
           </div>
           <div>
             <div className="font-semibold">Proyecto</div>
