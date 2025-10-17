@@ -88,6 +88,12 @@ export default function SupportImpact() {
                         </div>
                         <button
                           onClick={() => handlePlanClick(plan.id)}
+                          {...(plan.id === 'custom' ? {
+                            'data-tally-open': 'mBPjNe',
+                            'data-tally-layout': 'modal',
+                            'data-tally-emoji-text': '',
+                            'data-tally-emoji-animation': 'wave'
+                          } : {})}
                           className="px-4 py-2 bg-[#2F6D3A] text-white text-sm font-medium rounded-lg hover:bg-[#2F6D3A]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2F6D3A] focus:ring-offset-2"
                           aria-label={`Elegir ${plan.name}`}
                         >
@@ -182,7 +188,10 @@ export default function SupportImpact() {
                 <div className="text-center">
                   <h4 className="text-lg font-semibold text-[#1C1C1C] mb-4">¿Listo para invertir?</h4>
                   <button
-                    onClick={handleInvestorClick}
+                    data-tally-open="mBPjNe" 
+                    data-tally-layout="modal" 
+                    data-tally-emoji-text="" 
+                    data-tally-emoji-animation="wave"
                     className="inline-flex items-center justify-center gap-3 w-full bg-[#E2B100] text-[#1C1C1C] font-semibold py-4 px-6 rounded-xl hover:bg-[#E2B100]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#E2B100] focus:ring-offset-2 text-lg"
                   >
                     Contactar

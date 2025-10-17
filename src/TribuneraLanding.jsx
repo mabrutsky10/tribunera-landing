@@ -109,9 +109,15 @@ export default function TribuneraLanding() {
                 Yerbas que apoyan a selecciones hay de a montones… Que apoyen al fútbol que jugamos todos, solo una: Yerba Mate Tribunera
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a href="#sumate" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[#E2B100] text-[#1C1C1C] font-semibold shadow hover:brightness-95 transition">
+                <button 
+                  data-tally-open="mBPjNe" 
+                  data-tally-layout="modal" 
+                  data-tally-emoji-text="" 
+                  data-tally-emoji-animation="wave"
+                  className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[#E2B100] text-[#1C1C1C] font-semibold shadow hover:brightness-95 transition"
+                >
                   Quiero enterarme del lanzamiento <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
+                </button>
                 <a href="#support-impact" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-white/10 text-white font-semibold hover:bg-white/20 transition">
                   ¿Cómo funciona?
                 </a>
