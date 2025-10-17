@@ -62,3 +62,4 @@ tribunera-landing/
 - Framer Motion
 - Lucide React (iconos)
 
+

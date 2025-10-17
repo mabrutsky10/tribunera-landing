@@ -106,7 +106,7 @@ export default function TribuneraLanding() {
                 La yerba que comparte tu pasión
               </h1>
               <p className="mt-4 text-white/90 text-lg max-w-xl">
-                Yerbas que apoyan a selecciones hay de a montones. Que apoye al fútbol que jugamos todos, sólo una… Yerba Mate Tribunera
+                Yerbas que apoyan a selecciones hay de a montones… Que apoyen al fútbol que jugamos todos, solo una: Yerba Mate Tribunera
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a href="#sumate" className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[#E2B100] text-[#1C1C1C] font-semibold shadow hover:brightness-95 transition">
@@ -117,7 +117,7 @@ export default function TribuneraLanding() {
                 </a>
               </div>
               <div className="mt-6 flex items-center gap-4 text-white/80 text-sm">
-                <div className="flex items-center gap-2"><Trophy className="w-4 h-4" /> Blend uruguayo premium. Sin palo. Con mucho aguante... como vos!</div>
+                <div className="flex items-center gap-2"><Trophy className="w-4 h-4" /> Blend uruguayo premium. Sin palo. Con mucho aguante... ¡Como vos!</div>
               </div>
             </div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 text-white shadow-2xl">
@@ -150,7 +150,7 @@ export default function TribuneraLanding() {
             </div>
             <h3 className="mt-6 font-bold text-2xl text-[#2F6D3A]">{features[0].title}</h3>
             <p className="text-lg text-neutral-700 mt-3 leading-relaxed">
-              Yerba oficial del fútbol amateur, aportando a que cada equipo tenga su presencia y historia digital siendo más <strong className="text-[#2F6D3A] font-bold">visible</strong>, se <strong className="text-[#2F6D3A] font-bold">conecte</strong> con otros equipos, jugadores y seguidores, y así tener sus propios <strong className="text-[#2F6D3A] font-bold">ingresos</strong> por socios y sponsors (como Tribunera).
+              ¡La yerba oficial del fútbol amateur! Impulsando siempre que cada equipo tenga su presencia e historia digital, gane <strong className="text-[#2F6D3A] font-bold">visibilidad</strong>, se <strong className="text-[#2F6D3A] font-bold">conecte</strong> con otros equipos, jugadores y seguidores, y pueda generar sus propios <strong className="text-[#2F6D3A] font-bold">ingresos</strong> a través de sus socios y sponsors ¡como <strong className="text-[#2F6D3A] font-bold">Tribunera</strong>!
             </p>
           </motion.div>
         </div>
