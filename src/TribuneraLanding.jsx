@@ -325,7 +325,7 @@ export default function TribuneraLanding() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#E2B100]" />
-                <a href="mailto:hola@mas10.ar" className="text-white hover:text-[#E2B100] transition-colors">hola@mas10.ar</a>
+                <a href="mailto:hola@tribunera.com.ar" className="text-white hover:text-[#E2B100] transition-colors">hola@tribunera.com.ar</a>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[#E2B100]" />
