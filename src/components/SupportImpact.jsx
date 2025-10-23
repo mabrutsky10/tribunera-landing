@@ -88,12 +88,10 @@ export default function SupportImpact() {
                         </div>
                         <button
                           onClick={() => handlePlanClick(plan.id)}
-                          {...(plan.id === 'custom' ? {
-                            'data-tally-open': 'mBPjNe',
-                            'data-tally-layout': 'modal',
-                            'data-tally-emoji-text': '',
-                            'data-tally-emoji-animation': 'wave'
-                          } : {})}
+                          data-tally-open="mBPjNe"
+                          data-tally-layout="modal"
+                          data-tally-emoji-text=""
+                          data-tally-emoji-animation="wave"
                           className="px-4 py-2 bg-[#2F6D3A] text-white text-sm font-medium rounded-lg hover:bg-[#2F6D3A]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2F6D3A] focus:ring-offset-2"
                           aria-label={`Elegir ${plan.name}`}
                         >
