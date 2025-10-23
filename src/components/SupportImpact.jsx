@@ -87,7 +87,6 @@ export default function SupportImpact() {
                           <div className="text-sm text-neutral-600">{plan.packages}</div>
                         </div>
                         <button
-                          onClick={() => handlePlanClick(plan.id)}
                           data-tally-open="mBPjNe"
                           data-tally-layout="modal"
                           data-tally-emoji-text=""
